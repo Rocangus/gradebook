@@ -13,9 +13,23 @@ namespace GradeBook
             var input = Console.ReadLine();
             while (input != "q")
             {
-                var grade = double.Parse(input);
-                book.AddGrade(grade);
-                input = Console.ReadLine();
+                try
+                {
+                    var grade = double.Parse(input);
+                    book.AddGrade(grade);
+                }
+                catch(ArgumentException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                catch (FormatException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                finally
+                {
+                    input = Console.ReadLine();
+                }
             }
 
             var stats = book.GetStatistics();
