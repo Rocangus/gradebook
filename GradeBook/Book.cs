@@ -87,6 +87,27 @@ namespace GradeBook
         }
 
         private List<double> grades;
-        public string Name;
+        
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+
+            set
+            {
+                if (!String.IsNullOrEmpty(value))
+                {
+                    name = value;
+                }
+                else
+                {
+                    throw new ArgumentException("A book name may not be empty or Null");
+                }
+            }
+        }
+
+        private string name;
     }
 }
