@@ -11,7 +11,7 @@ namespace GradeBook
             Name = name;
         }
 
-        public void AddLetterGrade(char letter)
+            public void AddGrade(char letter)
         {
             switch(letter)
             {
