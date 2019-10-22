@@ -35,7 +35,6 @@ namespace GradeBook
                 result.High = Math.Max(grades[i], result.High);
                 result.Low = Math.Min(grades[i], result.Low);
                 result.Average += grades[i];
-                // Detta är ett test
             }
             result.Average /= grades.Count;
 
