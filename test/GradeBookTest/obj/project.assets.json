@@ -6601,11 +6601,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Elev\\Source\\Repos\\gradebook\\test\\GradeBookTest\\GradeBookTest.csproj",
+      "projectUniqueName": "C:\\Users\\Elev\\source\\repos\\gradebook\\test\\GradeBookTest\\GradeBookTest.csproj",
       "projectName": "GradeBookTest",
-      "projectPath": "C:\\Users\\Elev\\Source\\Repos\\gradebook\\test\\GradeBookTest\\GradeBookTest.csproj",
+      "projectPath": "C:\\Users\\Elev\\source\\repos\\gradebook\\test\\GradeBookTest\\GradeBookTest.csproj",
       "packagesPath": "C:\\Users\\Elev\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Elev\\Source\\Repos\\gradebook\\test\\GradeBookTest\\obj\\",
+      "outputPath": "C:\\Users\\Elev\\source\\repos\\gradebook\\test\\GradeBookTest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Elev\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6621,8 +6621,8 @@
       "frameworks": {
         "netcoreapp3.0": {
           "projectReferences": {
-            "C:\\Users\\Elev\\Source\\Repos\\gradebook\\GradeBook\\GradeBook.csproj": {
-              "projectPath": "C:\\Users\\Elev\\Source\\Repos\\gradebook\\GradeBook\\GradeBook.csproj"
+            "C:\\Users\\Elev\\source\\repos\\gradebook\\GradeBook\\GradeBook.csproj": {
+              "projectPath": "C:\\Users\\Elev\\source\\repos\\gradebook\\GradeBook\\GradeBook.csproj"
             }
           }
         }

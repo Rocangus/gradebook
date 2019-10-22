@@ -9,12 +9,13 @@ namespace GradeBook
         {
             var book = new Book("Scott's Grade Book");
 
-            Console.WriteLine("Please enter a grade (say 72.4) and hit enter to put it into the grade book. To stop entering, please write 'Q' and hit enter.");
+            Console.WriteLine("Please enter a grade (say 72.4) and hit enter to put it into the grade book. To stop entering, please write 'q' and hit enter.");
             var input = Console.ReadLine();
-            while (input != "Q")
+            while (input != "q")
             {
                 var grade = double.Parse(input);
                 book.AddGrade(grade);
+                input = Console.ReadLine();
             }
 
             var stats = book.GetStatistics();
