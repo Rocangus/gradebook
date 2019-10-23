@@ -121,9 +121,7 @@ namespace GradeBook
         public override Statistics GetStatistics()
         {
             var result = new Statistics();
-            result.Average = 0.0;
-            result.High = double.MinValue;
-            result.Low = double.MaxValue;
+            
 
             for (int i = 0; i < grades.Count; i++)
             {
