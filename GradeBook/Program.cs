@@ -22,7 +22,7 @@ namespace GradeBook
             Console.WriteLine($"The letter is {stats.Letter}");
         }
 
-        private static void EnterGrades(Book book)
+        private static void EnterGrades(IBook book)
         {
             Console.WriteLine("Please enter a grade (say 72.4) and hit enter to put it into the grade book. To stop entering, please write 'q' and hit enter.");
             var input = Console.ReadLine();
