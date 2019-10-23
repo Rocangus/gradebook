@@ -8,6 +8,10 @@ namespace GradeBook
         static void Main(string[] args)
         {
             var book = new Book("Scott's Grade Book");
+            book.GradeAdded += OnGradeAdded;
+            book.GradeAdded += OnGradeAdded;
+            book.GradeAdded -= OnGradeAdded;
+            book.GradeAdded += OnGradeAdded;
 
             Console.WriteLine("Please enter a grade (say 72.4) and hit enter to put it into the grade book. To stop entering, please write 'q' and hit enter.");
             var input = Console.ReadLine();
@@ -39,6 +43,11 @@ namespace GradeBook
             Console.WriteLine($"The highest grade is {stats.High:N1}");
             Console.WriteLine($"The average grade is {stats.Average:N1}");
             Console.WriteLine($"The letter is {stats.Letter}");
+        }
+
+        static void OnGradeAdded(object sender, EventArgs e)
+        {
+            Console.WriteLine("A grade waa added..");
         }
     }
 }
