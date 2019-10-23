@@ -11,7 +11,13 @@ namespace GradeBookTest
         {
             // arrange
             var book = new Book("");
-            book.AddGrade(105);
+            try
+            {
+                book.AddGrade(105);
+            }
+            catch (ArgumentException)
+            {
+            }
 
             // act
             var count = book.GetGradeCount();

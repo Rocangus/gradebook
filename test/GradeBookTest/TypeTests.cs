@@ -74,10 +74,9 @@ namespace GradeBookTest
         private void GetBookSetName(Book book, string name)
         {
             book = new Book(name);
-            book.Name = name;
         }
 
-        [Fact]
+ /*       [Fact]
         public void CanSetNameFromReference()
         {
             // arrange
@@ -93,7 +92,7 @@ namespace GradeBookTest
         private void SetName(Book book, string name)
         {
             book.Name = name;
-        }
+        } */
 
         [Fact]
         public void GetBookReturnsDifferentObjects()
