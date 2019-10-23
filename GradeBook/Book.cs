@@ -5,7 +5,7 @@ namespace GradeBook
 {
     public delegate void GradeAddedDelegate(object sender, EventArgs args);
 
-    public class NamedObject
+    public class NamedObject 
     {
         public NamedObject(string name)
         {
