@@ -13,7 +13,7 @@ namespace GradeBook
 
             public void AddGrade(char letter)
         {
-            switch(letter)
+            switch (letter)
             {
                 case 'A':
                     AddGrade(90);
@@ -93,5 +93,7 @@ namespace GradeBook
             get;
             private set;
         }
+
+        readonly string category = "Science";
     }
 }
