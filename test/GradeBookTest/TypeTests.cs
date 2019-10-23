@@ -5,8 +5,26 @@ using Xunit;
 namespace GradeBookTest
 {
 
+    public delegate string WriteLogDelegate(string logMessage);
+
     public class TypeTests
     {
+        [Fact]
+        public void WriteLogDelegateCanPointToMethod()
+        {
+            WriteLogDelegate log;
+
+            log = ReturnMessage;
+
+            var result = log("Hello!");
+            Assert.Equal("Hello!", result);
+        }
+
+        string ReturnMessage(string message)
+        {
+            return message;
+        }
+
         [Fact]
         public void StringsBehaveLikeValueTypes()
         {
@@ -76,7 +94,7 @@ namespace GradeBookTest
             book = new Book(name);
         }
 
- /*       [Fact]
+        [Fact]
         public void CanSetNameFromReference()
         {
             // arrange
@@ -92,7 +110,7 @@ namespace GradeBookTest
         private void SetName(Book book, string name)
         {
             book.Name = name;
-        } */
+        } 
 
         [Fact]
         public void GetBookReturnsDifferentObjects()
