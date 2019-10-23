@@ -90,24 +90,8 @@ namespace GradeBook
         
         public string Name
         {
-            get
-            {
-                return name;
-            }
-
-            set
-            {
-                if (!String.IsNullOrEmpty(value))
-                {
-                    name = value;
-                }
-                else
-                {
-                    throw new ArgumentException("A book name may not be empty or Null");
-                }
-            }
+            get;
+            private set;
         }
-
-        private string name;
     }
 }
