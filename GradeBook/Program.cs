@@ -9,9 +9,6 @@ namespace GradeBook
         {
             var book = new Book("Scott's Grade Book");
             book.GradeAdded += OnGradeAdded;
-            book.GradeAdded += OnGradeAdded;
-            book.GradeAdded -= OnGradeAdded;
-            book.GradeAdded += OnGradeAdded;
 
             Console.WriteLine("Please enter a grade (say 72.4) and hit enter to put it into the grade book. To stop entering, please write 'q' and hit enter.");
             var input = Console.ReadLine();
