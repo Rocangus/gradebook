@@ -54,9 +54,11 @@ namespace GradeBook
             var result = new Statistics();
             using (var reader = File.OpenText($"{Name}.txt"))
             {
-                 while (!reader.EndOfStream)
+                 var line = reader.ReadLine();
+                 while (line != null)
                  {
-                    result.AddGrade(Double.Parse(reader.ReadLine()));
+                    result.AddGrade(double.Parse(line));
+                    line = reader.ReadLine();
                  }
             }
             return result;
