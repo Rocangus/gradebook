@@ -3,15 +3,25 @@ namespace GradeBook
 {
     public class Statistics
     {
+
         public Statistics()
         {
-            Average = 0.0;
             High = double.MinValue;
             Low = double.MaxValue;
         }
 
         public void AddGrade(double grade)
         {
+            Count++;
+            Total += grade;
+            if (grade > High) 
+            {
+                High = grade;
+            }
+            if (grade < Low)
+            {
+                Low = grade;
+            }
             // Make sure that a Book has a statistics item in it created for it in the constructor and that stats.AddGrade() is called by the Book when a grade is added.
         }
 
@@ -33,10 +43,6 @@ namespace GradeBook
             {
                 return Total / Count;
             }
-            private set
-            {
-                average = value;
-            }
         }
         
         public double High
@@ -51,23 +57,25 @@ namespace GradeBook
             private set;
         }
 
-        public char GetGradeLetter()
+        public char Letter
         {
-            switch (Average)
+            get
             {
-                case var d when d >= 90.0:
-                    return 'A';
-                case var d when d >= 80.0:
-                    return 'B';
-                case var d when d >= 70.0:
-                    return 'C';
-                case var d when d >= 60.0:
-                    return 'D';
-                default:
-                    return 'F';
+                switch (Average)
+                {
+                    case var d when d >= 90.0:
+                        return 'A';
+                    case var d when d >= 80.0:
+                        return 'B';
+                    case var d when d >= 70.0:
+                        return 'C';
+                    case var d when d >= 60.0:
+                        return 'D';
+                    default:
+                        return 'F';
+                }
             }
             
         }
-        private double average;
     }
 }
