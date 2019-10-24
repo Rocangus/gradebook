@@ -51,7 +51,15 @@ namespace GradeBook
 
         public override Statistics GetStatistics()
         {
-            throw new NotImplementedException();
+            var result = new Statistics();
+            using (var reader = File.OpenText($"{Name}.txt"))
+            {
+                 while (!reader.EndOfStream)
+                 {
+                    result.AddGrade(Double.Parse(reader.ReadLine()));
+                 }
+            }
+            return result;
         }
 
     }
@@ -60,10 +68,7 @@ namespace GradeBook
     {
         public Book(string name) : base(name)
         {
-            Statistics = new Statistics();
         }
-
-        public Statistics Statistics { get; }
 
         public abstract event GradeAddedDelegate GradeAdded;
 
@@ -78,7 +83,6 @@ namespace GradeBook
         public InMemoryBook(string name) : base(name)
         {
             grades = new List<double>();
-            Name = name;
         }
 
             public void AddGrade(char letter)
@@ -107,12 +111,8 @@ namespace GradeBook
         {
             if (grade <= 100 && grade >= 0)
             {
-                    grades.Add(grade);
-                if(GradeAdded != null)
-                {
-                    GradeAdded(this, new EventArgs());
-                    Statistics.AddGrade(grade);
-                }
+                grades.Add(grade);
+                GradeAdded?.Invoke(this, new EventArgs());
             }
             else
             {
@@ -124,7 +124,12 @@ namespace GradeBook
 
         public override Statistics GetStatistics()
         {
-            return Statistics;
+            var result = new Statistics();
+            foreach(var grade in grades)
+            {
+                result.AddGrade(grade);
+            }
+            return result;
         }
 
         public int GetGradeCount()
